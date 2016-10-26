@@ -1,0 +1,35 @@
+<div class="dashboard">
+
+  <div class="left">
+    <input type="text" placeholder="Filter" ng-model="dash['filter']">
+  </div>
+
+  <div class="right">
+
+    <div class="products">
+      <h2>Products</h2>
+      <div class="images">
+        <div class="holder" ng-repeat="product in dash['products'] | filter:dash['filter']">
+          <img ng-src="{{ product['img'] }}" alt="" />
+          <p>{{ product['name'] }}</p>
+          <p>({{ product['quantity'] }}) Left</p>
+        </div>
+      </div>
+      <a href="#/products">Show More ...</a>
+    </div>
+
+    <div class="orders">
+      <h2>Recent Orders</h2>
+      <p ng-repeat="order in dash['orders']">{{ order['custName'] }} purchased {{ order['orderQty'] }} {{ order['pdtName'] }} -- ({{ order['time'] }} ago)</p>
+      <a href="#/orders">Show More ...</a>
+    </div>
+
+    <div class="customers">
+      <h2>New Customers</h2>
+      <p ng-repeat="customer in dash['customers']">{{ customer['name'] }} joined the store -- ({{ customer['time'] }} hours ago)</p>
+      <a href="#/customers">Show More ...</a>
+    </div>
+
+  </div>
+
+</div>

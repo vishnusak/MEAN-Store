@@ -1,0 +1,27 @@
+<div class="cust-details">
+  <form>
+    <h2>Add a new customer</h2>
+    <label>
+      Customer Name: <input type="text" ng-model="cust['name']">
+    </label>
+    <p ng-show="cust['error']">{{ cust['error'] }}</p>
+    <input type="submit" value="Add" ng-click="addCust()">
+  </form>
+  <input type="text" placeholder="search name..." ng-model="cust['search']">
+  <div class="cust-table">
+    <table>
+      <thead>
+        <tr>
+          <th>Customer Name</th><th>Created Date</th><th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr ng-repeat="customer in cust['customers'] | filter:cust['search']">
+          <td>{{ customer['name'] }}</td><td>{{ customer['createdAt'] }}</td><td><button ng-click="deleteCust(customer['_id'])">Remove</button></td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+<div class="ord-details">
+
+  <form>
+    <h2>Add a new order</h2>
+    <label>
+      <label>Customer: <select ng-options="customer['name'] for customer in ord['customers']" ng-model="ord['custName']"></select></label>
+    </label>
+    <label>
+      <label>Product: <select ng-options="product['name'] for product in ord['products'] track by product['_id']" ng-model="ord['pdtName']" ng-change="getQty(ord['pdtName'])"></select></label> <label>Order: <select ng-options="quantity for quantity in ord['quantity']" ng-model="ord['orderQty']"></select></label>
+    </label>
+    <p ng-show="ord['error']">{{ ord['error'] }}</p>
+    <input type="submit" value="Order" ng-click="saveOrder()">
+  </form>
+
+  <input type="text" placeholder="filter by name" ng-model="ord['filter']">
+
+  <div class="ord-table">
+    <table>
+
+      <thead>
+
+        <tr>
+          <th>Customer Name</th><th>Product</th><th>Quantity</th><th>Date</th>
+        </tr>
+
+      </thead>
+
+      <tbody>
+
+        <tr ng-repeat="order in ord['orders'] | filter:ord['filter']">
+          <td>{{ order['custName'] }}</td><td>{{ order['pdtName'] }}</td><td>{{ order['orderQty'] }}</td><td>{{ order['createdAt'] }}</td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+</div>

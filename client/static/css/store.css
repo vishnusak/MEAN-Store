@@ -1,0 +1,480 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  font-family: 'Josefin Slab', serif;
+  font-size: 14px;
+  background: rgb(240, 240, 240);
+  background: linear-gradient(rgb(235, 235, 235), rgb(250, 250, 250));
+  background-attachment: fixed;
+}
+
+.tab{
+  text-align: center;
+  text-decoration: none;
+  font-size: 140%;
+  font-weight: bold;
+  padding: 1vh 1vw;
+  width: 15%;
+  background: rgb(50, 100, 255);
+  color: white;
+}
+
+.clicked{
+  background: white;
+  color: rgb(50, 100, 255);
+}
+
+header{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: rgb(50, 100, 255);
+}
+  header > h1{
+    padding: 1vh 1vw;
+    background-color: rgb(50, 100, 255);
+    color: white;
+  }
+  header > div{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+main{
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* START - Styling for the dashboard */
+.dashboard{
+  margin: 1vh 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.left{
+  width: 20vw;
+}
+  .left > input{
+    display: block;
+    width: 95%;
+    margin: 5vh auto;
+    text-align: center;
+    padding: 0.5vh 0.5vw;
+  }
+
+.right{
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between;
+  align-items: center;
+  width: 80vw;
+}
+  .right > div{
+    width: 100%;
+  }
+
+.products{
+  display: flex;
+  flex-direction: column;
+}
+  .images{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+    .holder{
+      width: 13vw;
+      height: 21vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      box-shadow: 0 0 2vh 0 rgb(50, 100, 255);
+    }
+      .holder > img{
+        max-width: 100%;
+        max-height: 80%;
+      }
+      .holder > p{
+        text-align: center;
+        font-weight: bold;
+        font-size: 120%;
+      }
+  .products > a{
+    width: 20%;
+    margin: 3vh auto;
+    padding: 0.5vh 0;
+    text-align: center;
+    font-weight: bold;
+    font-size: 120%;
+    text-decoration: none;
+    background-color: rgb(50, 100, 255);
+    color: white;
+    border-radius: 10px;
+  }
+  .products > h2{
+    text-decoration: underline;
+    margin: 0.75vh auto;
+    text-align: center;
+  }
+
+.orders{
+}
+.customers{
+}
+  .orders > h2,
+  .customers > h2{
+    text-decoration: underline;
+    margin: 0.75vh auto;
+    text-align: center;
+  }
+  .orders > p,
+  .customers > p{
+    margin: 0.75vh auto;
+    text-align: center;
+    font-weight: bold;
+    font-size: 120%;
+  }
+  .orders > a,
+  .customers > a{
+    width: 20%;
+    display: block;
+    margin: 3vh auto;
+    padding: 0.5vh 0;
+    text-align: center;
+    font-weight: bold;
+    font-size: 120%;
+    text-decoration: none;
+    background-color: rgb(50, 100, 255);
+    color: white;
+    border-radius: 10px;
+  }
+/* END - Styling for the dashboard */
+
+/* Start - Styling Order Details page */
+.ord-details{
+  margin: 1vh auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+  .ord-details > form{
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2vh 0;
+    box-shadow: 0 0 3vh 0 rgb(50, 100, 255);
+  }
+    .ord-details > form > h2{
+      text-decoration: underline;
+      margin: 1.75vh auto;
+    }
+    .ord-details > form > label{
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      font-weight: bold;
+      font-size: 130%;
+      padding: 0.75vh 3vw;
+    }
+      .ord-details > form > label > label{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+      }
+        .ord-details > form > label > label > select{
+          min-width: 50%;
+          width: 100%;
+          padding: 0.5vh 0.5vw;
+          margin: 0 1vw;
+        }
+    .ord-details > form > p{
+      color: red;
+      font-style: italic;
+      font-weight: bold;
+    }
+    .ord-details > form > input{
+      margin: 2vh auto 0 auto;
+      padding: 0.5vh 1vw;
+      border-radius: 5px;
+      border-right: 2px outset rgb(50, 100, 255);
+      border-bottom: 2px outset rgb(50, 100, 255);
+      background-color: rgb(50, 100, 255);
+      color: white;
+      font-size: 110%;
+      cursor: pointer;
+    }
+  .ord-details > input{
+    width: 25vw;
+    margin: 3vh auto;
+    text-align: center;
+    padding: 0.5vh 0;
+  }
+
+  .ord-table{
+    box-shadow: 0 0 3vh 0 rgb(50, 100, 255);
+    width: 75vw;
+  }
+    .ord-table > table{
+      width: 75vw;
+      table-layout: fixed;
+      border-collapse: collapse;
+    }
+      .ord-table > table > thead,
+      .ord-table > table > tbody{
+        display: block;
+        width: 75vw;
+      }
+      .ord-table > table > tbody{
+        height: 45vh;
+        overflow-x:hidden;
+        overflow-y: auto;
+      }
+        .ord-table > table > thead > tr,
+        .ord-table > table > tbody > tr{
+          width: 75vw;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+        }
+          .ord-table > table > tbody > tr > td,
+          .ord-table > table > thead > tr > th{
+            width: 75vw;
+            font-size: 130%;
+            text-align: center;
+          }
+          .ord-table > table > thead > tr > th{
+            padding: 1vh 0;
+            background-color: rgb(50, 100, 255);
+            color: white;
+          }
+          .ord-table > table > tbody > tr > td{
+            border-bottom: 1px solid rgb(50, 100, 255);
+            padding: 0.5vh 0;
+            font-weight: bold;
+          }
+/* END - Styling Order Details page */
+
+/* Start - Styling Customer Details page */
+.cust-details{
+  margin: 1vh auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+  .cust-details > form{
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2vh 0;
+    box-shadow: 0 0 3vh 0 rgb(50, 100, 255);
+  }
+    .cust-details > form > h2{
+      text-decoration: underline;
+      margin: 1.75vh auto;
+    }
+    .cust-details > form > label{
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: bold;
+      font-size: 130%;
+      padding: 0.75vh 3vw;
+    }
+      .cust-details > form > label > input{
+        width: 35vw;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 0.5vh 0.5vw;
+      }
+    .cust-details > form > p{
+      color: red;
+      font-style: italic;
+      font-weight: bold;
+    }
+    .cust-details > form > input{
+      margin: 2vh auto 0 auto;
+      padding: 0.5vh 1vw;
+      border-radius: 5px;
+      border-right: 2px outset rgb(50, 100, 255);
+      border-bottom: 2px outset rgb(50, 100, 255);
+      background-color: rgb(50, 100, 255);
+      color: white;
+      font-size: 110%;
+      cursor: pointer;
+    }
+  .cust-details > input{
+    width: 25vw;
+    margin: 3vh auto;
+    text-align: center;
+    padding: 0.5vh 0;
+  }
+
+  .cust-table{
+    box-shadow: 0 0 3vh 0 rgb(50, 100, 255);
+    width: 75vw;
+  }
+    .cust-table > table{
+      width: 75vw;
+      table-layout: fixed;
+      border-collapse: collapse;
+    }
+      .cust-table > table > thead,
+      .cust-table > table > tbody{
+        display: block;
+        width: 75vw;
+      }
+      .cust-table > table > tbody{
+        height: 45vh;
+        overflow-x:hidden;
+        overflow-y: auto;
+      }
+        .cust-table > table > thead > tr,
+        .cust-table > table > tbody > tr{
+          width: 75vw;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+        }
+          .cust-table > table > tbody > tr > td,
+          .cust-table > table > thead > tr > th{
+            width: 75vw;
+            font-size: 130%;
+            text-align: center;
+          }
+          .cust-table > table > thead > tr > th{
+            padding: 1vh 0;
+            background-color: rgb(50, 100, 255);
+            color: white;
+          }
+          .cust-table > table > tbody > tr > td{
+            border-bottom: 1px solid rgb(50, 100, 255);
+            padding: 0.5vh 0;
+            font-weight: bold;
+          }
+            .cust-table > table > tbody > tr > td > button{
+              text-align: center;
+              text-decoration: none;
+              padding: 0.15vh 1vw;
+              background: rgb(50, 100, 255);
+              color: white;
+              border-right: 2px outset rgb(50, 100, 255);
+              border-bottom: 2px outset rgb(50, 100, 255);
+              border-radius: 5px;
+              cursor: pointer;
+            }
+/* END - Styling Customer Details page */
+
+/* START - Styling Product Details page */
+.pdt-details{
+  margin: 1vh auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+  .pdt-left{
+    width: 20vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 3vh 0 rgb(50, 100, 255);
+  }
+    .pdt-left > input{
+      margin: 2vh auto;
+      padding: 0.5vh 0.5vw;
+      width: 95%;
+      text-align: center;
+    }
+    .pdt-left > form{
+      margin: 0 0.5vw 2vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+    }
+      .pdt-left > form > *{
+        margin: 1vh auto;
+        font-weight: bold;
+      }
+      .pdt-left > form > h2{
+        text-decoration: underline;
+      }
+      .pdt-left > form > label{
+        width: 100%;
+        font-size: 130%;
+      }
+        .pdt-left > form > label > *{
+          width: 100%;
+        }
+        .pdt-left > form > label > input{
+          padding: 0.5vh 0.5vw;
+        }
+        .pdt-left > form > label > textarea{
+          padding: 0.5vh 0.5vw;
+          height: 15vh;
+          resize: none;
+        }
+      .pdt-left > form > p{
+        color: red;
+        font-style: italic;
+        font-weight: bold;
+      }
+      .pdt-left > form > input{
+        margin: 2vh auto 0 auto;
+        padding: 0.5vh 1vw;
+        border-radius: 5px;
+        border-right: 2px outset rgb(50, 100, 255);
+        border-bottom: 2px outset rgb(50, 100, 255);
+        background-color: rgb(50, 100, 255);
+        color: white;
+        font-size: 110%;
+        cursor: pointer;
+      }
+  .pdt-right{
+    width: 68vw;
+    height: 88vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    /*padding: 1vh 1vw;*/
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:flex-start;
+    /*box-shadow: 0 0 3vh 0 rgb(50, 100, 255);*/
+  }
+    .pdt-holder{
+      width: 15vw;
+      height: 25vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin: 0.5vh 0.6vw;
+      box-shadow: 0 0 2vh 0 rgb(50, 100, 255);
+    }
+      .pdt-holder > img{
+        max-width: 100%;
+        max-height: 80%;
+      }
+      .pdt-holder > p{
+        text-align: center;
+        font-weight: bold;
+        font-size: 120%;
+      }
+
+/* END - Styling Product Details page */

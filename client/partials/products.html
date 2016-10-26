@@ -1,0 +1,32 @@
+<div class="pdt-details">
+  <div class="pdt-left">
+    <input type="text" placeholder="search..." ng-model="pdt['search']">
+    <form>
+      <h2>Add a new product</h2>
+      <label>
+        Name: <input type="text" ng-model="pdt['name']">
+      </label>
+      <label>
+        Image (url): <input type="url" ng-model="pdt['url']">
+      </label>
+      <label>
+        Description: <textarea ng-model="pdt['desc']"></textarea>
+      </label>
+      <label>
+        Initial Quantity: <input type="number" ng-model="pdt['quantity']">
+      </label>
+      <p ng-show="pdt['error']">{{ pdt['error'] }}</p>
+      <input type="submit" value="Submit" ng-click="addNewProduct()">
+    </form>
+  </div>
+
+  <div class="pdt-right">
+
+    <div class="pdt-holder" ng-repeat="product in pdt['products'] | filter:pdt['search']">
+      <img ng-src="{{ product['img'] }}" alt="" />
+      <p>{{ product['name'] }}</p>
+      <p>({{ product['quantity'] }} Quantity)</p>
+    </div>
+
+  </div>
+</div>
